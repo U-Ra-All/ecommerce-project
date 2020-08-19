@@ -1,0 +1,16 @@
+.cart-table {
+	min-width: 480px;
+	font-size: 14px;
+}
+
+.cart-thead {
+	font-weight: normal;
+	text-transform: uppercase;
+	letter-spacing: .2em;
+	background-color: #f8f9fa !important;
+}
+
+.cart-icon {
+	text-decoration: none;
+	color: #868e96;
+}
