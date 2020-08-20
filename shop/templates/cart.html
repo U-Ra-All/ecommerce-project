@@ -56,7 +56,7 @@
 					<td>
 						${{cart_item.sub_total}}
 					</td>
-					{% if cart_item.quantity < cart_item.product_stock %}
+					{% if cart_item.quantity < cart_item.product.stock %}
 					<td>
 						<a href="{% url 'add_cart' cart_item.product.id %}"><i class="material-icons cart-icon">add_shopping_cart</i></a>
 						<a href=""><i class="material-icons cart-icon">remove_circle_outline</i></a>
