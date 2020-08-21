@@ -15,6 +15,12 @@
         </li>
         <li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="">Contacts</a></li>
         <li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="">About</a></li>
+        {% if item_count > 0 %}
+        <li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{% url 'cart_detail' %}">
+        <i class="material-icons cart-icon">add_shopping_cart</i>
+        ({{item_count}})
+      </a></li>
+      {% endif %}
       </ul>
     
 
