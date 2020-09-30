@@ -15,6 +15,17 @@
         </li>
         <li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="">Contacts</a></li>
         <li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="">About</a></li>
+        {% if request.user.is_authenticated and request.user.first_name %}
+        <li class="nav-item"><span class="nav-link text-light text-uppercase font-weight-bold px-3">Welcome, {{ request.user.first_name }}! <i class="material-icons cart-icon">account_circle</i></span></li>
+
+        <li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{% url 'signout' %}">Sign Out <i class="material-icons cart-icon">exit_to_app</i></a></li>
+
+        {% else %}
+        <li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{% url 'signup' %}">Sign Up<i class="material-icons cart-icon">add</i></a></li>
+        <li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{% url 'login' %}">Log in<i class="material-icons cart-icon">login</i></a></li>
+
+        {% endif %}
+
         {% if item_count > 0 %}
         <li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{% url 'cart_detail' %}">
         <i class="material-icons cart-icon">add_shopping_cart</i>
