@@ -91,7 +91,7 @@ def signUpView(request):
 		form = SignUpForm(request.POST)
 		if form.is_valid():
 			form.save()
-			username = form.clean_data.get('username')
+			username = form.cleaned_data.get('username')
 			signup_user = User.objects.get(username=username)
 			user_group = Group.objects.get(name='User')
 			user_group.user_set.add(signup_user)
